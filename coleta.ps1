@@ -32,7 +32,7 @@ $body = @{
 } | ConvertTo-Json
 
 # 5. Envio para o Webhook do Google Sheets
-$webhookUrl = "SUA_URL_DO_GOOGLE_APPS_SCRIPT_AQUI"
+$webhookUrl = "https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnRucwF--An1M9DS9avrDkix5Zd0R6oGEDPc3zG7CNRU0TTI0avcw5dKeeGZavxQ3g3LfnQe0ZfrKyzgcnN-7HrozW-cwlBHRs5TTIFB9Cp_fRH173RxfAiPhQGaCHErFGjS9yNR-sRaRLudTtArRCOWnfov-LL2vnjMwmIJ3mvc0qiJWoJSGKliIa-GGAvv_dv7CUJWre3cmmw3zFgwvEDAAv4kEZ_pU9XX-HdqHUH1WOWYIPtzukoTHqWf2lNLFuAaXhubWndi_zVfRccLJ5pJr112ow&lib=MdGGGpk-_l9OkZfsEZL_doGyEsnfW8Qrt"
 Invoke-RestMethod -Uri $webhookUrl -Method Post -Body $body -ContentType "application/json"
 
 Write-Host "Coleta enviada com sucesso para a nuvem!" -ForegroundColor Green
